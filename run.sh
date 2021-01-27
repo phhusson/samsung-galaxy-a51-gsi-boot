@@ -4,6 +4,7 @@ set -ex
 
 base=/hdd2/dumps/Samsung/SM-A515F_XEF/
 base=/hdd2/dumps/Samsung/SM-G781U
+base=/home/phh/tmp/SM-G781U_SPR/
 
 cp $base/recovery.img .
 off=$(grep -ab -o SEANDROIDENFORCE recovery.img |tail -n 1 |cut -d : -f 1)
@@ -25,7 +26,8 @@ cd d
 ~phh/Downloads/magisk/x86/magiskboot cpio ramdisk.cpio extract
 # Reverse fastbootd ENG mode check
 #~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery e10313aaf40300aa6ecc009420010034 e10313aaf40300aa6ecc0094 20 01 00 35
-~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 3ad3009420010034 3ad3009420010035
+#~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 3ad3009420010034 3ad3009420010035
+~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 080109aae80000b4 080109aae80000b5
 ~phh/Downloads/magisk/x86/magiskboot cpio ramdisk.cpio 'add 0755 system/bin/recovery system/bin/recovery'
 ~phh/Downloads/magisk/x86/magiskboot repack ../r.img new-boot.img
 cp new-boot.img ../r.img
