@@ -30,13 +30,11 @@ cd d
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 3ad3009420010034 3ad3009420010035
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 080109aae80000b4 080109aae80000b5
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 20f0a6ef38b1681c 20f0a6ef38b9681c
+~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 23f03aed38b1681c 23f03aed38b9681c
 ~phh/Downloads/magisk/x86/magiskboot cpio ramdisk.cpio 'add 0755 system/bin/recovery system/bin/recovery'
 ~phh/Downloads/magisk/x86/magiskboot repack ../r.img new-boot.img
 cp new-boot.img ../r.img
 )
 
 /build2/AOSP-11.0/out/host/linux-x86/bin/avbtool extract_public_key --key phh.pem --output phh.pub.bin
-/build2/AOSP-11.0/out/host/linux-x86/bin/avbtool add_hash_footer --partition_name recovery --partition_size 82694144 --image r.img --key phh.pem --algorithm SHA256_RSA4096
-
-# boot.img MUST NOT be signed
-# recovery.img MUST be signed
+/build2/AOSP-11.0/out/host/linux-x86/bin/avbtool add_hash_footer --partition_name recovery --partition_size $(wc -c recovery.img |cut -f 1 -d ' ') --image r.img --key phh.pem --algorithm SHA256_RSA4096
