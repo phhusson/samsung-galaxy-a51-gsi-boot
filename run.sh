@@ -28,6 +28,7 @@ cd d
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery e10313aaf40300aa6ecc009420010034 e10313aaf40300aa6ecc0094 20 01 00 35
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery eec3009420010034 eec3009420010035
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 3ad3009420010034 3ad3009420010035
+~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 50c0009420010034 50c0009420010035
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 080109aae80000b4 080109aae80000b5
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 20f0a6ef38b1681c 20f0a6ef38b9681c
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 23f03aed38b1681c 23f03aed38b9681c
