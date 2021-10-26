@@ -32,6 +32,7 @@ cd d
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 080109aae80000b4 080109aae80000b5
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 20f0a6ef38b1681c 20f0a6ef38b9681c
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 23f03aed38b1681c 23f03aed38b9681c
+~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 20f09eef38b1681c 20f09eef38b9681c
 ~phh/Downloads/magisk/x86/magiskboot cpio ramdisk.cpio 'add 0755 system/bin/recovery system/bin/recovery'
 ~phh/Downloads/magisk/x86/magiskboot repack ../r.img new-boot.img
 cp new-boot.img ../r.img
