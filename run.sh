@@ -2,15 +2,14 @@
 
 set -ex
 
-base=/hdd2/dumps/Samsung/SM-A515F_XEF/
-base=/hdd2/dumps/Samsung/SM-G781U
-base=/home/phh/tmp/SM-G781U_SPR/
+#base=/hdd2/dumps/Samsung/SM-A515F_XEF/
+#base=/hdd2/dumps/Samsung/SM-G781U
+#base=/home/phh/tmp/SM-G781U_SPR/
 
-cp $base/recovery.img .
+#cp $base/recovery.img .
 off=$(grep -ab -o SEANDROIDENFORCE recovery.img |tail -n 1 |cut -d : -f 1)
 dd if=recovery.img of=r.img bs=4k count=$off iflag=count_bytes
 
-cp $base/boot.img .
 off=$(grep -ab -o SEANDROIDENFORCE boot.img |tail -n 1 |cut -d : -f 1)
 dd if=boot.img of=b.img bs=4k count=$off iflag=count_bytes
 
@@ -33,6 +32,9 @@ cd d
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 20f0a6ef38b1681c 20f0a6ef38b9681c
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 23f03aed38b1681c 23f03aed38b9681c
 ~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 20f09eef38b1681c 20f09eef38b9681c
+~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 26f0ceec30b1681c 26f0ceec30b9681c
+~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 24f0fcee30b1681c 24f0fcee30b9681c
+~phh/Downloads/magisk/x86/magiskboot hexpatch system/bin/recovery 27f02eeb30b1681c 27f02eeb30b9681c
 ~phh/Downloads/magisk/x86/magiskboot cpio ramdisk.cpio 'add 0755 system/bin/recovery system/bin/recovery'
 ~phh/Downloads/magisk/x86/magiskboot repack ../r.img new-boot.img
 cp new-boot.img ../r.img
