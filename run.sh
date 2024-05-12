@@ -7,8 +7,9 @@ set -ex
 #base=/home/phh/tmp/SM-G781U_SPR/
 
 #cp $base/recovery.img .
-off=$(grep -ab -o SEANDROIDENFORCE recovery.img |tail -n 1 |cut -d : -f 1)
-dd if=recovery.img of=r.img bs=4k count=$off iflag=count_bytes
+#off=$(grep -ab -o SEANDROIDENFORCE recovery.img |tail -n 1 |cut -d : -f 1)
+#dd if=recovery.img of=r.img bs=4k count=$off iflag=count_bytes
+cp recovery.img r.img
 
 off=$(grep -ab -o SEANDROIDENFORCE boot.img |tail -n 1 |cut -d : -f 1)
 dd if=boot.img of=b.img bs=4k count=$off iflag=count_bytes
