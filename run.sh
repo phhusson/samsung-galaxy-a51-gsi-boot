@@ -40,6 +40,10 @@ set +e
 ../magiskboot hexpatch system/bin/recovery 9ef0f4ec28b1701c 9ef0f4ec28b9701c
 ../magiskboot hexpatch system/bin/recovery 9ef00ced28b1701c 9ef00ced28b9701c
 ../magiskboot hexpatch system/bin/recovery 2001597ae0000054 2001597ae1000054  # ccmp w9, w25, #0, eq ; b.e #0x20 ===> b.ne #0x20
+../magiskboot hexpatch system/bin/recovery 24f0f2ea30b1681c 24f0f2ea30b9681c
+../magiskboot hexpatch system/bin/recovery 41010054a0020012f44f48a9 4101005420008052f44f48a9
+
+cp system/bin/recovery ../reco-patched
 
 set -e
 ../magiskboot cpio ramdisk.cpio 'add 0755 system/bin/recovery system/bin/recovery'
